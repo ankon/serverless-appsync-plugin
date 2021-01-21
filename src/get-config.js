@@ -59,7 +59,7 @@ const getConfig = (config, provider, servicePath) => {
   const mappingTemplates = config.mappingTemplates || [];
 
   const readSchemaFile =
-      schemaRelPath => fs.readFileSync(path.join(servicePath, schemaRelPath), { encoding: 'utf8' });
+      schemaPath => fs.readFileSync(path.resolve(servicePath, schemaPath), { encoding: 'utf8' });
 
   const schemaContent =
     Array.isArray(config.schema) ?
